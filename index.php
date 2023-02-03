@@ -38,10 +38,11 @@ class Movie {
     <title>Primo esercizio OOP</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <div class="row">
+            <div class="col-6">
             <div class="card" style="width: 18rem;">
-                <img src="<?php echo $movie_1->image ?>" class="card-img-top" alt="avatar">
+                <img src="<?php echo $movie_1->image ?>" class="card-img-top" alt="avatar" style="width: 100%; height:200px;">
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $movie_1->titolo ?></h5>
                     <p class="card-text"><?php echo "Regista: ".$movie_1->regista ?></p>
@@ -49,15 +50,19 @@ class Movie {
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem;">
-                <img src="<?php echo $movie_2->image ?>" class="card-img-top" alt="titanic">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $movie_2->titolo ?></h5>
-                    <p class="card-text"><?php echo "Regista: ".$movie_2->regista ?></p>
-                    <p class="card-text"><?php echo "Durata: ".$movie_2->durata ?></p>
-                </div>
-                
             </div>
+            <div class="col-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="<?php echo $movie_2->image ?>" class="card-img-top" alt="titanic" style="width: 100%; height:200px;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $movie_2->titolo ?></h5>
+                        <p class="card-text"><?php echo "Regista: ".$movie_2->regista ?></p>
+                        <p class="card-text"><?php echo "Durata: ".$movie_2->durata ?></p>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
     </div>
     
