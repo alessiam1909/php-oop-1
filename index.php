@@ -1,11 +1,22 @@
 <?php 
 
 class Movie {
-
+    public $titolo;
+    public $genere;
+    public $regista;
+    public $durata;
 }
 
+ $movie_1 = new Movie();
+ $movie_2 =  new Movie();
+ $movie_3 = new Movie();
 
-
+ function __construct($titolo, $genere, $regista, $durata){
+    $this->titolo = $titolo;
+    $this->genere = $genere;
+    $this->regista = $regista;
+    $this->durata = $durata;
+ }
 
 
 ?>
