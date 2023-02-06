@@ -21,14 +21,45 @@ class Movie {
         return  $durata;
     }
 
+    public function printGenre(){
+        $genres = $this->genere;
+        $genres_string = '';
+
+        foreach($genres as $genre){
+            $genres_string .= $genre->name." ";
+        };
+
+        return $genres_string;
+    }
+
+    
+
 
 }
 
- $movie_1 = new Movie("Avatar", array("Fantascienza", "Avventura", "Fantasy", "Azione"),"https://i0.wp.com/www.mobiflip.de/wp-content/uploads/2021/03/avatar-film-poster.jpg?fit=1200%2C825&ssl=1", "James Cameron", "162 minuti");
- $movie_2 =  new Movie("Titanic", array("Drammatico", "Romantico"),"https://tse2.mm.bing.net/th?id=OIP.__hkNxjspvQRCmFM4_1CrgHaEK&pid=Api", "James Cameron", "194 minuti");
+class Genre{
+
+    public $name;
+
+    public function __construct($name){
+        $this->name = $name;
+    }
+}
+
  
+ $azione = new Genre ('azione');
+ $fantasy = new Genre ('fantasy');
+ $fantascienza = new Genre ('fantascienza');
+ $avventura = new Genre ('avventura');
+
+ $genres=[
+    $azione, $fantasy, $fantascienza, $avventura
+ ];
 
 
+ $movie_1 = new Movie("Avatar", $genres,"https://i0.wp.com/www.mobiflip.de/wp-content/uploads/2021/03/avatar-film-poster.jpg?fit=1200%2C825&ssl=1", "James Cameron", "162 minuti");
+ $movie_2 =  new Movie("Titanic", $genres,"https://tse2.mm.bing.net/th?id=OIP.__hkNxjspvQRCmFM4_1CrgHaEK&pid=Api", "James Cameron", "194 minuti");
+ 
 
 ?>
 
@@ -53,6 +84,7 @@ class Movie {
                     <h5 class="card-title"><?php echo $movie_1->titolo; ?></h5>
                     <p class="card-text"><?php echo "Regista: ".$movie_1->regista; ?></p>
                     <p class="card-text"><?php echo $movie_1->getDurata($movie_1->durata); ?></p>
+                    <p class="card-text"><?php echo "Generi: ".$movie_1->printGenre(); ?></p>
                 </div>
             </div>
 
@@ -64,6 +96,7 @@ class Movie {
                         <h5 class="card-title"><?php echo $movie_2->titolo; ?></h5>
                         <p class="card-text"><?php echo "Regista: ".$movie_2->regista; ?></p>
                         <p class="card-text"><?php echo $movie_2->getDurata($movie_2->durata); ?></p>
+                        <p class="card-text"><?php echo "Generi: ".$movie_2->printGenre(); ?></p>
                     </div>
                     
                 </div>
