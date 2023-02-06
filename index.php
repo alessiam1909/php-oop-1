@@ -15,6 +15,12 @@ class Movie {
         $this->durata = $_durata;
     }
 
+    public function getDurata($durata){
+        $this->durata = $durata;
+        $durata= "Durata film: ".$this->durata;
+        return  $durata;
+    }
+
 
 }
 
@@ -42,22 +48,22 @@ class Movie {
         <div class="row">
             <div class="col-6">
             <div class="card" style="width: 18rem;">
-                <img src="<?php echo $movie_1->image ?>" class="card-img-top" alt="avatar" style="width: 100%; height:200px;">
+                <img src="<?php echo $movie_1->image; ?>" class="card-img-top" alt="avatar" style="width: 100%; height:200px;">
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $movie_1->titolo ?></h5>
-                    <p class="card-text"><?php echo "Regista: ".$movie_1->regista ?></p>
-                    <p class="card-text"><?php echo "Durata: ".$movie_1->durata ?></p>
+                    <h5 class="card-title"><?php echo $movie_1->titolo; ?></h5>
+                    <p class="card-text"><?php echo "Regista: ".$movie_1->regista; ?></p>
+                    <p class="card-text"><?php echo $movie_1->getDurata($movie_1->durata); ?></p>
                 </div>
             </div>
 
             </div>
             <div class="col-6">
                 <div class="card" style="width: 18rem;">
-                    <img src="<?php echo $movie_2->image ?>" class="card-img-top" alt="titanic" style="width: 100%; height:200px;">
+                    <img src="<?php echo $movie_2->image; ?>" class="card-img-top" alt="titanic" style="width: 100%; height:200px;">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $movie_2->titolo ?></h5>
-                        <p class="card-text"><?php echo "Regista: ".$movie_2->regista ?></p>
-                        <p class="card-text"><?php echo "Durata: ".$movie_2->durata ?></p>
+                        <h5 class="card-title"><?php echo $movie_2->titolo; ?></h5>
+                        <p class="card-text"><?php echo "Regista: ".$movie_2->regista; ?></p>
+                        <p class="card-text"><?php echo $movie_2->getDurata($movie_2->durata); ?></p>
                     </div>
                     
                 </div>
